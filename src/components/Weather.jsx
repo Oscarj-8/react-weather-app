@@ -6,7 +6,7 @@ function Weather() {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(null);
 
-  const API_KEY = process.env.REACT_APP_API_KEY;
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   const fetchWeather = async () => {
     try {
@@ -39,7 +39,7 @@ function Weather() {
             {weather.name}, {weather.sys.country}
           </h2>
           <p>{weather.weather[0].description}</p>
-          <p>Temprature: {weather.main.temp} &#8451</p>
+          <p>Temprature: {weather.main.temp} &deg;C </p>
         </div>
       )}
       {error && <p>{error}</p>}
