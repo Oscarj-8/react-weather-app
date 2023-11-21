@@ -6,7 +6,7 @@ function Weather() {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(null);
 
-  const API_KEY = "d7afab559885a5b1cfdf926dbaabccc6";
+  const API_KEY = process.env.REACT_APP_API_KEY;
 
   const fetchWeather = async () => {
     try {
@@ -23,7 +23,7 @@ function Weather() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Weather App</h1>
       <input
         type="text"
