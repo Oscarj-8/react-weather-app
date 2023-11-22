@@ -44,12 +44,11 @@ function Weather() {
           <p>
             <span>City, Country:</span> {weather.name}, {weather.sys.country}
           </p>
-
           <p>
             <span>Weather Desription:</span> {weather.weather[0].description}
           </p>
           <p>
-            <span>Temprature:</span> {weather.main.temp} &deg;C{" "}
+            <span>Temprature:</span> {weather.main.temp - 273.15} &deg;C
           </p>
         </div>
       )}
