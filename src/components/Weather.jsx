@@ -53,18 +53,20 @@ function Weather() {
 
   return (
     <div className="container">
-      <div className="top-section">
-        <img src={cloudy} alt="Weather image" />
-        <h1>Weather App</h1>
-      </div>
-      <div className="input-section">
-        <input
-          type="text"
-          placeholder="Enter city name"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-        />
-        <button onClick={fetchWeather}>Get Weather</button>
+      <div>
+        <div className="top-section">
+          <img src={cloudy} alt="Weather image" />
+          <h1>Weather App</h1>
+        </div>
+        <div className="input-section">
+          <input
+            type="text"
+            placeholder="Enter city name"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <button onClick={fetchWeather}>Get Weather</button>
+        </div>
       </div>
 
       {weather && (
@@ -81,9 +83,11 @@ function Weather() {
         </div>
       )}
       {error && <p>{error}</p>}
-      {majorCitiesWeather.map((data) => (
-        <WeatherCard data={data} />
-      ))}
+      <div className="major-cities-container">
+        {majorCitiesWeather.map((data) => (
+          <WeatherCard key={data.id} data={data} />
+        ))}
+      </div>
     </div>
   );
 }

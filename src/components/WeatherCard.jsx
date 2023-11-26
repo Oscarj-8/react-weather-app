@@ -9,10 +9,17 @@ const WeatherCard = ({ data }) => {
   const date = moment(dt * 1000).format("MMMM Do YYYY, h:mm:ss a");
 
   return (
-    <Card>
-      <Image src={iconUrl} wrapped ui={false} />
+    <Card className="major-city-card">
       <Card.Content>
-        <Card.Header>{name}</Card.Header>
+        <Card.Header className="card-header">
+          <Image
+            src={iconUrl}
+            wrapped
+            ui={false}
+            className="major-city-image"
+          />
+          {name}
+        </Card.Header>
         <Card.Meta>
           <span className="date">{date}</span>
         </Card.Meta>

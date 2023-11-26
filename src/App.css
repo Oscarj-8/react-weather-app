@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 3em;
 }
 
 .top-section {
@@ -10,7 +11,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1%;
+  margin: 10%;
   gap: 1em;
 }
 

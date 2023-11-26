@@ -14,3 +14,29 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+.major-cities-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+.major-city-card {
+  color: white;
+}
+
+.ui.card {
+  margin: 0;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.major-city-image {
+  width: 50px;
+}
