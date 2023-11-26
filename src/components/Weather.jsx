@@ -1,13 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import cloudy from "../../public/cloudy.png";
+import cloudy from "../images/cloudy.png";
 
 function Weather() {
+  const majorCities = [
+    "New York",
+    "London",
+    "Tokyo",
+    "Dubai",
+    "Beijing",
+    "Paris",
+    "Moscow",
+    "Sydney",
+    "Delhi",
+    "Cairo",
+  ];
+
+  const [majorCitiesWeather, setMajorCitiesWeather] = useState([]);
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(null);
 
   const API_KEY = import.meta.env.VITE_API_KEY;
+
+  useEffect(() => {
+    const FetchMajorCitiesWeather = async () => {
+      const promises = majorCities.map((city) => {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+
+        return fetch(url).then((res) => res.json());
+      });
+      const results = await Promise.all(promises);
+      setMajorCitiesWeather(results);
+    };
+  });
 
   const fetchWeather = async () => {
     try {
@@ -53,6 +79,9 @@ function Weather() {
         </div>
       )}
       {error && <p>{error}</p>}
+      {majorCitiesWeather.map((data) => (
+        <WeatherCard data={data} />
+      ))}
     </div>
   );
 }
