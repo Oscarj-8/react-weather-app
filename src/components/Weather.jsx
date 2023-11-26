@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import cloudy from "../images/cloudy.png";
+import WeatherCard from "./WeatherCard";
 
 function Weather() {
   const majorCities = [
@@ -33,7 +34,8 @@ function Weather() {
       const results = await Promise.all(promises);
       setMajorCitiesWeather(results);
     };
-  });
+    FetchMajorCitiesWeather();
+  }, []);
 
   const fetchWeather = async () => {
     try {
