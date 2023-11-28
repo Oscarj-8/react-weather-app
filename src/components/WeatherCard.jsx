@@ -1,12 +1,10 @@
 import { Card, Icon, Image } from "semantic-ui-react";
-import moment from "moment";
+import DateDisplay from "./DateDisplay";
 
 const WeatherCard = ({ data }) => {
   const { name, main, weather, sys, dt } = data;
 
   const iconUrl = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
-
-  const date = moment(dt * 1000).format("MMMM Do YYYY, h:mm:ss a");
 
   return (
     <Card className="major-city-card">
@@ -21,7 +19,7 @@ const WeatherCard = ({ data }) => {
           {name}
         </Card.Header>
         <Card.Meta>
-          <span className="date">{date}</span>
+          <DateDisplay timestamp={dt} />
         </Card.Meta>
         <Card.Description>
           {weather[0].main} - {weather[0].description}

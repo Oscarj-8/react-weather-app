@@ -21,6 +21,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 2em;
+  margin: 0 2em;
 }
 
 .major-city-card {
@@ -40,4 +41,8 @@ body {
 
 .major-city-image {
   width: 50px;
+}
+
+.card-footer {
+  background-color: #0b121e;
 }

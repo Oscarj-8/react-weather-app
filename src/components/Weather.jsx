@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import cloudy from "../images/cloudy.png";
 import WeatherCard from "./WeatherCard";
+import DateDisplay from "./DateDisplay";
 
 function Weather() {
   const majorCities = [
@@ -43,7 +44,11 @@ function Weather() {
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
       );
 
-      setWeather(response.data);
+      const iconCode = response.data.weather[0].icon;
+
+      const iconUrl = `http://openweathermap.org/img/w/${iconCode}.png`;
+
+      setWeather({ ...response.data, iconUrl });
       setError(null);
     } catch (err) {
       setWeather(null);
@@ -71,11 +76,15 @@ function Weather() {
 
       {weather && (
         <div className="wrapper">
+          <img src={weather.iconUrl} alt="" />
           <p>
             <span>City, Country:</span> {weather.name}, {weather.sys.country}
           </p>
           <p>
             <span>Weather Desription:</span> {weather.weather[0].description}
+          </p>
+          <p>
+            <DateDisplay timestamp={weather.dt} />
           </p>
           <p>
             <span>Temprature:</span> {weather.main.temp - 273.15} &deg;C
