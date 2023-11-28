@@ -35,8 +35,13 @@ input {
   padding: 0.8em 0.5em;
   border: none;
   border-radius: 0.5em;
+  background-color: #f1f0f0;
 }
 
+input::placeholder {
+  color: #212020;
+  font-size: 1.2em;
+}
 input:hover {
   border-color: #504f4f;
 }
@@ -53,6 +58,7 @@ button {
   border-radius: 0.5em;
   font-weight: 500;
   cursor: pointer;
+  background-color: #1e90ff;
 }
 
 button:hover {
