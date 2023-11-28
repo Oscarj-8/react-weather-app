@@ -27,7 +27,7 @@ const WeatherCard = ({ data }) => {
       </Card.Content>
       <Card.Content extra>
         <Icon name="thermometer" />
-        {main.temp} °C
+        {main.temp - 273.15} °C
       </Card.Content>
     </Card>
   );

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Icon } from "semantic-ui-react";
 import axios from "axios";
 import cloudy from "../images/cloudy.png";
 import WeatherCard from "./WeatherCard";
@@ -87,7 +88,11 @@ function Weather() {
             <DateDisplay timestamp={weather.dt} />
           </p>
           <p>
-            <span>Temprature:</span> {weather.main.temp - 273.15} &deg;C
+            <span>
+              <Icon name="thermometer" />
+              Temprature:
+            </span>
+            {weather.main.temp - 273.15} &deg;C
           </p>
         </div>
       )}
