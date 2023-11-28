@@ -6,17 +6,25 @@ const WeatherCard = ({ data }) => {
 
   const iconUrl = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
 
+  const cardStyle = {
+    backgroundColor: "#202B3B",
+  };
+
+  const CardHeader = {
+    color: "#f3f3f3",
+  };
+
   return (
-    <Card className="major-city-card">
+    <Card style={cardStyle}>
       <Card.Content>
-        <Card.Header className="card-header">
+        <Card.Header style={CardHeader}>
           <Image
             src={iconUrl}
             wrapped
             ui={false}
             className="major-city-image"
           />
-          {name}
+          {name}, {sys.country}
         </Card.Header>
         <Card.Meta>
           <DateDisplay timestamp={dt} />
