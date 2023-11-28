@@ -7,7 +7,8 @@ const WeatherCard = ({ data }) => {
   const iconUrl = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
 
   const cardStyle = {
-    backgroundColor: "#202B3B",
+    backgroundColor: " #1e90ff",
+    borderRadius: "1.4em",
   };
 
   const CardHeader = {
