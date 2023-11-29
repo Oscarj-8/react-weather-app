@@ -59,7 +59,7 @@ function Weather() {
 
   return (
     <div className="container">
-      <div>
+      <div className="search-wrapper">
         <div className="top-section">
           <img src={cloudy} alt="Weather image" />
           <h1>Weather App</h1>
