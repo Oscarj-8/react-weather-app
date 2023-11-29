@@ -36,6 +36,7 @@ input {
   border: none;
   border-radius: 0.5em;
   background-color: #f1f0f0;
+  color: rgb(15, 15, 15);
 }
 
 input::placeholder {
