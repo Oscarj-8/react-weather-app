@@ -12,6 +12,7 @@
     "axios": "^1.6.2",
     "dotenv": "^16.3.1",
     "moment": "^2.29.4",
+    "rainyday.js": "^0.1.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "semantic-ui-css": "^2.5.0",
