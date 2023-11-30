@@ -81,8 +81,7 @@ function Weather() {
             <Card.Header>
               <img src={weather.iconUrl} alt="" />
               <p>
-                {weather.name}
-                {weather.sys.country}
+                {weather.name}, {weather.sys.country}
               </p>
             </Card.Header>{" "}
             <Card.Meta>
@@ -91,7 +90,9 @@ function Weather() {
               </p>
             </Card.Meta>
             <Card.Description>
-              <p>{weather.weather[0].description}</p>
+              <p>
+                {weather.weather[0].main} - {weather.weather[0].description}
+              </p>
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
