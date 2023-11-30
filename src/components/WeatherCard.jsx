@@ -9,6 +9,7 @@ const WeatherCard = ({ data }) => {
   const cardStyle = {
     backgroundColor: " #1e90ff",
     borderRadius: "1.4em",
+    boxShadow: "5px 5px 20px #1e90ff",
   };
 
   const CardHeader = {
