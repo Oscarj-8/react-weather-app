@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Icon } from "semantic-ui-react";
+import { Card, Icon } from "semantic-ui-react";
 import axios from "axios";
 import cloudy from "../images/cloudy.png";
 import WeatherCard from "./WeatherCard";
@@ -76,25 +76,31 @@ function Weather() {
       </div>
 
       {weather && (
-        <div className="wrapper">
-          <img src={weather.iconUrl} alt="" />
-          <p>
-            <span>City, Country:</span> {weather.name}, {weather.sys.country}
-          </p>
-          <p>
-            <span>Weather Desription:</span> {weather.weather[0].description}
-          </p>
-          <p>
-            <DateDisplay timestamp={weather.dt} />
-          </p>
-          <p>
-            <span>
+        <Card>
+          <Card.Content>
+            <Card.Header>
+              <img src={weather.iconUrl} alt="" />
+              <p>
+                {weather.name}
+                {weather.sys.country}
+              </p>
+            </Card.Header>{" "}
+            <Card.Meta>
+              <p>
+                <DateDisplay timestamp={weather.dt} />
+              </p>
+            </Card.Meta>
+            <Card.Description>
+              <p>{weather.weather[0].description}</p>
+            </Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+            <p>
               <Icon name="thermometer" />
-              Temprature:
-            </span>
-            {weather.main.temp - 273.15} &deg;C
-          </p>
-        </div>
+              {weather.main.temp - 273.15} &deg;C
+            </p>
+          </Card.Content>
+        </Card>
       )}
       {error && <p>{error}</p>}
       <div className="major-cities-container">
