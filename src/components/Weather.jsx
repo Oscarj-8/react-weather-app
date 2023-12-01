@@ -56,6 +56,12 @@ function Weather() {
     }
   };
 
+  const handleClear = () => {
+    setCity("");
+    setWeather(null);
+    setError("");
+  };
+
   return (
     <div className="container">
       <div className="search-wrapper">
@@ -71,6 +77,7 @@ function Weather() {
             onChange={(e) => setCity(e.target.value)}
           />
           <button onClick={fetchWeather}>Get Weather</button>
+          <button onClick={handleClear}>Clear</button>
         </div>
       </div>
 
@@ -102,7 +109,9 @@ function Weather() {
           </Card.Content>
         </Card>
       )}
+
       {error && <p>{error}</p>}
+
       <div className="major-cities-container">
         {majorCitiesWeather.map((data) => (
           <WeatherCard key={data.id} data={data} />

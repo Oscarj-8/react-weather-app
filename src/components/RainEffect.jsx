@@ -21,9 +21,9 @@ const RainEffect = () => {
 
   return (
     <div className="rain-container">
-      {rainDrops.map((drop) => (
+      {rainDrops.map((drop, index) => (
         <div
-          key={drop.id}
+          key={index}
           className="rain-drop"
           style={{
             left: drop.left,
