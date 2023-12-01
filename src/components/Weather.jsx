@@ -23,7 +23,6 @@ function Weather() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(null);
-
   const API_KEY = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
