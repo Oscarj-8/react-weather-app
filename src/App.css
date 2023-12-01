@@ -59,6 +59,7 @@ input::placeholder {
   color: #212020;
   font-size: 1.2em;
 }
+
 input:hover {
   border-color: #504f4f;
 }
@@ -76,10 +77,12 @@ button {
   font-weight: 500;
   cursor: pointer;
   background-color: #1e90ff;
+  transition: all 0.5s ease-in-out;
 }
 
 button:hover {
-  background-color: #504f4f;
+  background-color: rgb(245, 243, 243);
+  color: #212020;
 }
 
 .wrapper img {
@@ -102,10 +105,8 @@ button:hover {
   bottom: 100vh;
   width: 1px;
   height: 15px;
-  /* border-radius: 50%; */
   background-color: rgb(247, 247, 247);
-  opacity: 0.5;
-  /* filter: blur(3px); */
+  opacity: 0.4;
   animation: fall linear infinite;
 }
 

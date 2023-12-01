@@ -1,25 +1,42 @@
 import { Card, Icon, Image } from "semantic-ui-react";
 import DateDisplay from "./DateDisplay";
+import { useState } from "react";
 
 const WeatherCard = ({ data }) => {
   const { name, main, weather, sys, dt } = data;
+  const [isHovered, setIsHovered] = useState(false);
 
   const iconUrl = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
 
   const cardStyle = {
-    backgroundColor: " #1e90ff",
+    backgroundColor: "#1e90ff",
     borderRadius: "1.4em",
     boxShadow: "5px 5px 10px #1e90ff",
+    transition: "all 0.5s ease-in-out",
+  };
+
+  const cardHoverStyle = {
+    backgroundColor: "#f3f3f3",
   };
 
   const CardHeader = {
     color: "#f3f3f3",
   };
 
+  const hoveredCardHeader = {
+    color: "#1e90ff",
+  };
+
   return (
-    <Card style={cardStyle}>
+    <Card
+      style={{ ...cardStyle, ...(isHovered ? cardHoverStyle : {}) }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <Card.Content>
-        <Card.Header style={CardHeader}>
+        <Card.Header
+          style={{ ...CardHeader, ...(isHovered ? hoveredCardHeader : {}) }}
+        >
           <Image
             src={iconUrl}
             wrapped
