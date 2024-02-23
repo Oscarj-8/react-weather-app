@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   gap: 3em;
+  padding: 2rem;
 }
 
 .search-wrapper {
@@ -30,24 +31,27 @@
 .top-section h1 {
   margin: 0;
   text-shadow: 1px 1px 15px #a2a5de;
-  font-size: 3.5em;
+  font-size: 2em;
 }
 
 img {
-  width: 3.5em;
-  height: 3.5em;
+  width: 2.5em;
+  height: 2.5em;
 }
 
 .input-section {
   display: flex;
+  flex-direction: column;
   gap: 1em;
   align-items: center;
   justify-content: center;
   width: 100%;
+  max-width: 55rem;
 }
 
 input {
-  width: 15%;
+  width: 100%;
+  max-width: 25rem;
   padding: 0.8em 0.5em;
   border: none;
   border-radius: 0.5em;
@@ -70,7 +74,8 @@ span {
 }
 
 button {
-  width: 9em;
+  width: 100%;
+  max-width: 25rem;
   padding: 0.8em;
   border: none;
   border-radius: 0.5em;
@@ -113,5 +118,15 @@ button:hover {
 @keyframes fall {
   to {
     transform: translateY(110vh);
+  }
+}
+
+@media (min-width: 768px) {
+  .input-section {
+    flex-direction: row;
+  }
+
+  button {
+    width: 12rem;
   }
 }
