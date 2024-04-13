@@ -2,7 +2,7 @@
 
 This is a simple weather application built with Vite and React, utilizing the OpenWeather API to fetch real-time weather data. Users can enter a city name, and the app will display information such as the current weather, description, and temperature.
 
-### Demo link https://react-weather-app-seven-wine.vercel.app
+### Demo link - https://react-weather-app-seven-wine.vercel.app
 
 ### Prerequisites
 
